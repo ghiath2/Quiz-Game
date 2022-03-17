@@ -1,1 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Smooch+Sans:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Smooch Sans, sans-serif ;
+}
+
+body {
+    background: #007bff;
+}
+button {
+    font-family: Orbitron;
+}
+
+/* Start Button section */
+.start-btn, .info-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start-btn button {
+    font-size: 25px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+/* Info Box Section */
+.info-box {
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.info-box .info-title {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.info-box .info-list {
+    padding: 15px 35px;
+}
+
+.info-box .info-list .info {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
