@@ -28,8 +28,12 @@ const next_btn = quiz_box.querySelector(".next_btn");
 
 // If Next Button Clicked
 next_btn.onclick = ()=>{
+  if( que_count < questions.length - 1){
     que_count++;
     showQuestions(que_count);
+  }else{
+      console.log("Questions completed")
+  }
 }
 
 
