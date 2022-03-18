@@ -116,6 +116,8 @@ button {
 }
 
 .quiz-box header {
+    position: relative;
+    z-index: 99;
     height: 70px;
     padding: 0 30px;
     background: #fff;
@@ -162,6 +164,69 @@ button {
     border: 1px solid #343a40;
     user-select: none;
 }
+
+.quiz-box section {
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+
+.quiz-box section .que-text {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quiz-box section .option-list {
+    padding: 20px 0;
+    display: block;
+}
+
+section .option-list .option {
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section .option-list .option:hover {
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+}
+
+.option-list .option:last-child {
+    margin-bottom: 0px;
+}
+
+.option-list .option .icon {
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+    pointer-events: none;
+}
+
+.option-list .option .icon.tick {
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.option-list .option .icon.cross {
+    color: #a4283a;
+    border-color: #a42834;
+    background: #f8d7da;
+}
+
+
 
 
 
