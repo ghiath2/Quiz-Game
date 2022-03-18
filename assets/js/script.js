@@ -6,8 +6,6 @@ const continue_btn = info_box.querySelector(".buttons .restart");
 const quiz_box = document.querySelector(".quiz_box");
 const timeCount = quiz_box.querySelector(".timer .timer_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
-
-
 const option_list = document.querySelector(".option_list");
 
 // if Start Quiz button clicked
@@ -32,8 +30,8 @@ continue_btn.onclick = ()=>{
 
 let que_count = 0;
 let que_numb = 1;
-let counterLine;
 let counter;
+let counterLine;
 let timeValue = 15;
 let widthValue = 0;
 let userScore = 0;
@@ -43,22 +41,23 @@ const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
-// if Restart Quiz Button Clicked
-    restart_quiz.onclick = ()=>{
-        result_box.classList.remove("activeResult");
-        quiz_box.classList.add("activeQuiz");
-        let que_count = 0;
-        let que_numb = 1;
-        let timeValue = 15;
-        let widthValue = 0;
-        let userScore = 0;
-        showQuestions(que_count);
-        queCounter(que_numb);
-        clearInterval(counter);
-        startTimer(timeValue);
-        clearInterval(counterLine);
-        startTimerLine(widthValue);
-        next_btn.style.display = "none";
+// if restart Quiz button clicked
+restart_quiz.onclick = ()=>{
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    result_box.classList.remove("activeResult"); //hide result box
+    timeValue = 15; 
+    que_count = 0;
+    que_numb = 1;
+    userScore = 0;
+    widthValue = 0;
+    showQuetions(que_count); //calling showQestions function
+    queCounter(que_numb); //passing que_numb value to queCounter
+    clearInterval(counter); //clear counter
+    clearInterval(counterLine); //clear counterLine
+    startTimer(timeValue); //calling startTimer function
+    startTimerLine(widthValue); //calling startTimerLine function
+    timeText.textContent = "Time Left"; //change the text of timeText to Time Left
+    next_btn.classList.remove("show"); //hide the next button
 }
 
 // if quit Quiz button clicked
@@ -105,6 +104,7 @@ function showQuestions (index){
 let tickIcon = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIcon = ' <div class="icon cross"><i class="fas fa-times"></i></div>';
 
+//if user clicked on option
 function optionSelected(answer){
     clearInterval(counter);
     clearInterval(counterLine);
@@ -164,15 +164,32 @@ function showResultBox(){
 function startTimer(time){
     counter = setInterval(timer, 1000)
     function timer(){
-        timeCount.textContent = time;
-        time--;
-        if(time < 9){
+        timeCount.textContent = time; //changing the value of timeCount with time value
+        time--; //decrement the time value
+        if(time < 9){ //if timer is less than 9
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero;
         }
-        if(time < 0){
-            clearInterval(counter);
+        if(time < 0){ //if timer is less than 0
+            clearInterval(counter);//clear counter
             timeCount.textContent = "00";
+
+            let correctAns = questions[que_count].answer;
+            let allOptions = option_list.children.length;
+
+            for (let i = 0; i < allOptions; i++) {
+                if(option_list.children[i].textContent == correctAns){
+                    option_list.children[i].setAttribute("class", "option correct");
+                    option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+                }   
+            }
+
+            for (let i = 0; i < allOptions; i++) {
+                option_list.children[i].classList.add("disabled");
+                
+            }
+            next_btn.style.display = "block";
+
         }
     }
 }
@@ -190,46 +207,9 @@ function startTimerLine(time){
 
 
 
-
-
-
-
-
-
-
 function queCounter(index){
     const bottom_ques_counter = quiz_box.querySelector(".total_que");
     let totalQuesCountTag = '<span><p>'+ index +'</p>Of <p>'+ questions.length +'</p>Questions</span>';
     bottom_ques_counter.innerHTML = totalQuesCountTag;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
