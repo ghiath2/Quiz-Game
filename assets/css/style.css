@@ -226,6 +226,47 @@ section .option-list .option:hover {
     background: #f8d7da;
 }
 
+.quiz-box footer {
+    height: 60px;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz-box footer .total-que span {
+    display: flex;
+    user-select: none;
+}
+
+.quiz-box footer .total-que span p {
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+.quiz-box footer .total-que span p:first-child {
+    padding-left: 0px;
+}
+
+footer .next-btn {
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+footer .next-btn:hover {
+    background: #0263ca;
+}
+
 
 
 
