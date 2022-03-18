@@ -19,5 +19,15 @@ exit_btn.onclick = ()=>{
 continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuestions();
+}
+
+let que_count = 0;
+
+// Getting Quetions And Options From Array
+function showQuestions (){
+    const que_text = document.querySelector(".que_text");
+    let que_tag = '<span>'+ questions[4].question +'</span>';
+    que_text.innerHTML = que_tag;
 }
 
