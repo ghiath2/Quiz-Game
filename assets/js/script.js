@@ -37,6 +37,9 @@ let timeValue = 15;
 let widthValue = 0;
 
 const next_btn = quiz_box.querySelector(".next_btn");
+const result_box = document.querySelector(".result_box");
+const restart_quiz = result_box.querySelector(".buttuns .restart");
+const quit_quiz = result_box.querySelector(".buttuns .quit");
 
 // If Next Button Clicked
 next_btn.onclick = ()=>{
@@ -52,6 +55,7 @@ next_btn.onclick = ()=>{
     next_btn.style.display = "none";
   }else{
       console.log("Questions completed")
+      showResultBox();
   }
 }
 
@@ -106,6 +110,12 @@ function optionSelected(answer){
     }
     next_btn.style.display = "block";
     
+}
+
+function showResultBox(){
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.remove("activeQuiz"); //hide quiz box
+    result_box.classList.add("activeResult"); //show result box
 }
 
 function startTimer(time){
