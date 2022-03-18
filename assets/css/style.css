@@ -260,6 +260,10 @@ section .option_list .option:hover {
     
 }
 
+.option_list .option.disabled {
+    pointer-events: none;
+}
+
 .quiz_box footer {
     height: 60px;
     width: 100%;
