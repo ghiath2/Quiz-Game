@@ -15,7 +15,7 @@ button {
 }
 
 /* Start Button section */
-.start-btn, .info-box {
+.start-btn, .info-box, .quiz-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -107,6 +107,63 @@ button {
     color: #fff;
     background: #007bff;
 }
+
+/* Quiz Box Section */
+.quiz-box {
+    width: 550px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.quiz-box header {
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, .2);
+}
+
+.quiz-box header .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quiz-box header .timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    height: 45px;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    border-radius: 5px;
+    padding: 0 8px;
+}
+
+.quiz-box header .timer .time-text {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quiz-box header .timer .timer-sec {
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: #343a40;
+    border: 1px solid #343a40;
+    user-select: none;
+}
+
+
 
 
 
