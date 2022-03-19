@@ -71,6 +71,11 @@ It's a game that includes a set of questions about programming languages allows 
 
   ![CSS Test](/assets/documentation/css-v.png)
 
+  - JAVASCRIPT
+  - 2 warrning were returned when passing through the official [JSHint validator](https://jshint.com/)
+
+  ![HTML test](/assets/documentation/html-v.png)
+
 ***Performance Testing***
   - Tested on the Developer Tools Lighthouse
     ![Performancee](/assets/documentation/test.png)
